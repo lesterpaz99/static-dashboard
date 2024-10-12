@@ -9,6 +9,14 @@ img {
   height: auto;
 }
 
+menu {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
 :root {
   --primary-color: #1992D3;
   --bg-color: #E2E8F0;
@@ -27,3 +35,72 @@ img {
   font-family: "Roboto", sans-serif;
   font-weight: 700;
 } */
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--bg-color);
+}
+
+.container_layout {
+  display: grid;
+  grid-template-columns: 20% 1fr;
+  grid-template-rows: 154px 1fr;
+  grid-template-areas:
+                      'aside header'
+                      'aside main';
+}
+
+.aside {
+  grid-area: aside;
+  background-color: var(--primary-color);
+  color: var(--secondary-bg-color);
+  min-height: 100vh;
+}
+
+.aside_logo {
+  display: flex;
+  column-gap: 12px;
+  padding: 16px;
+  margin-bottom: 24px;
+
+  > img {
+    width: 54px;
+  }
+
+  > h1 {
+    font-size: 1.6rem;
+  }
+}
+
+.aside_menu {
+  font-weight: bold;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 10px 26px;
+    cursor: pointer;
+  }
+
+  li:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  > .app_menu {
+    margin-bottom: 42px;
+  }
+
+  img {
+    width: 20px;
+  }
+}
+
+.header {
+  grid-area: header;
+  background-color: var(--secondary-bg-color);
+}
+
+.main {
+  grid-area: main;
+}
