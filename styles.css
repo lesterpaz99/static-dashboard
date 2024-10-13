@@ -17,6 +17,12 @@ a {
   text-decoration: none;
 }
 
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
 :root {
   --primary-color: #1992D3;
   --bg-color: #E2E8F0;
@@ -26,16 +32,6 @@ a {
   --secondary-text-color: #636363;
 }
 
-/* .roboto-light {
-  font-family: "Roboto", sans-serif;
-  font-weight: 300;
-}
-
-.roboto-bold {
-  font-family: "Roboto", sans-serif;
-  font-weight: 700;
-} */
-
 body {
   font-family: "Roboto", sans-serif;
   background-color: var(--bg-color);
@@ -44,7 +40,7 @@ body {
 .container_layout {
   display: grid;
   grid-template-columns: 20% 1fr;
-  grid-template-rows: 154px 1fr;
+  grid-template-rows: auto 1fr;
   grid-template-areas:
                       'aside header'
                       'aside main';
@@ -99,6 +95,106 @@ body {
 .header {
   grid-area: header;
   background-color: var(--secondary-bg-color);
+  box-shadow: 0px 6px 6px 0px rgba(0,0,0,0.1);
+  padding: 16px 32px;
+
+  .search_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .session_container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  img:not(.profile_img) {
+    width: 20px;
+  }
+}
+
+.profile_img {
+  width: 64px;
+  border-radius: 50%;
+}
+
+.profile_img--small {
+  width: 38px;
+}
+
+.search_container {
+
+  .search_bar {
+    display: flex;
+    gap: 12px;
+  }
+
+  .profile {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+}
+
+.profile_name {
+  font-weight: bold;
+}
+
+.search_bar {
+  input {
+    border: none;
+    outline: none;
+    background-color: var(--bg-color);
+    border-radius: 12px;
+    padding: 4px 12px;
+    width: 40vw;
+    font-weight: bold;
+
+  }
+
+  input:focus {
+  box-shadow: 0px 6px 6px 0px rgba(0,0,0,0.1);
+  }
+}
+
+.session_container {
+
+  .current_session {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+  }
+
+  .buttons_container {
+    display: flex;
+    gap: 16px;
+  }
+}
+
+.buttons_container {
+  button {
+    background-color: var(--primary-color);
+    padding: 10px 24px;
+    border-radius: 24px;
+    color: var(--secondary-bg-color);
+    font-weight: bold;
+  }
+}
+
+.hi_there {
+  /* font-size: 1rem; */
+
+  .session_name {
+    font-size: 1.7rem;
+    font-weight: bold;
+  }
 }
 
 .main {
